@@ -22,7 +22,11 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>{db.title}</title>
+        <meta property="og:title" content={db.title} />
+        <meta property="og:site_name" content={db.title} />
         <meta property="og:image" content={db.bg} key="image" />
+        <meta property="og:description" content="Teste seus conhecimentos sobre boxe" />
       </Head>
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
