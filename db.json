@@ -4,25 +4,85 @@
     "description": "Ponha a teste os seus conhecimentos sobre grandes celebridades do boxe mundial, como Muhammed Ali, Jack Dempsey e Rocky Marciano",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
-        "answer": 2,
+        "image": "https://media.giphy.com/media/xT9Igf2wBfQ8ClCDNC/giphy.gif",
+        "title": "Qual era o nome anterior de Muhammad Ali?",
+        "description": "Nem sempre ele atendeu pela sua famosa alcunha. Qual foi o primeiro nome da grande estrela?",
+        "answer": 1,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Douglas Jackson",
+          "Cassius Clay",
+          "Bill Summers",
+          "George Foreman"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "https://s2.glbimg.com/jxsEJpXsNNmZqsEAi51AbnQ6EJA=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/b/o/GMpaDETcKbj9GHhlAWmw/bbc.jpg",
+        "title": "Em que ano Muhammad Ali se converte ao islamismo?",
+        "description": "Sempre questionador do seu tempo e sociedade, Ali foi considerado o primeiro atleta a reunir esporte, política e luta social. Grande parte de sua visão envolvia a sua religião. Quando que ele se converteu para o Islã?",
+        "answer": 1,
+        "alternatives": [
+           "1959",
+           "1961",
+           "1964",
+           "1967"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/S3cWARZRkVhZGBoES0/giphy.gif",
+        "title": "Qual foi o oponente de Ali na luta em que conquista os dois cinturões mundiais em 1974, no então Zaire?",
+        "description": "Esta famosa luta ficou conhecida como \"Rumble in the Jungle\". Nela, Ali subiu ao ringue como o campeão da África, símbolo do pan-africanismo, e desceu dentendo os cinturões da WBA e da WBC.",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "George Foreman",
+           "Mike Tyson",
+           "Joe Frazier",
+           "Evander Holyfield"
+        ]
+      },
+      {
+        "image": "https://i.imgur.com/1UOvZ.gif",
+        "title": "Qual era o estilo de luta de Mike Tyson?",
+        "description": "O atleta ficou conhecido pelo seu estilo de luta ofensivo e pelas suas famosas esquivas. Qual é o nome do estilo de luta que Mike Tyson usava?",
+        "answer": 3,
+        "alternatives": [
+           "Outboxer",
+           "Slugging",
+           "Boxer-Puncher",
+           "Swarmer"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/3oEduZsmRYhqI25X2w/giphy.gif",
+        "title": "Qual é a cidade natal de Mike Tyson",
+        "description": "De origens humildes, o boxeador escalou até os cumes mais altos do esporte mundial. Onde foi que nasceu o atleta?",
+        "answer": 2,
+        "alternatives": [
+           "Los Angeles, CA",
+           "Nashville, TE",
+           "Nova Iorque, NY",
+           "Nova Orleães, LA"
+        ]
+      },
+      {
+        "image": "https://www.hojeemdia.com.br/polopoly_fs/1.652472!/image/image.jpg_gen/derivatives/landscape_653/image.jpg",
+        "title": "Qual foi o número de vitórias e de derrotas acumuladas por Rocky Marciano?",
+        "description": "Rocky Marciano foi um desportista lendário e que serviu de inspiração para incontáveis outros boxeadores, bem como para o filme Rocky, de Silvester Stallone.",
+        "answer": 0,
+        "alternatives": [
+           "49 vitórias - 00 derrotas",
+           "37 vitórias - 04 derrotas",
+           "50 vitórias - 06 derrotas",
+           "44 vitórias - 10 derrotas"
+        ]
+      },
+      {
+        "image": "https://cdn.espn.com.br/image/livre/f2745dee-b40b-4279-b955-fc498bcfb7bc.jpg",
+        "title": "Quem foi o ganhador da luta computadorizada entre Ali x Marciano?",
+        "description": "Rocky Marciano já tinha se aposentado quando ali subiu ao ringue pela primeira vez, mas isso não foi suficiente para impedir questionamento sobre qual dos dois era o melhor. A \"luta\" foi decidida então por um algoritmo de computador. Quem foi o ganhador?",
+        "answer": 1,
+        "alternatives": [
+           "Muhammad Ali",
+           "Rocky Marciano"
         ]
       }
     ],
