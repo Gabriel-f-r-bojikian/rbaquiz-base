@@ -5,6 +5,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
+import next from 'next';
 
 function LoadingWidget() {
   return (
@@ -20,48 +21,117 @@ function LoadingWidget() {
   );
 }
 
+function QuestionWidget({ 
+  question, 
+  questionIndex,
+  totalQuestions,
+  onSubmit
+}) {
+  const questionId = `question__${questionIndex}`;
+  return (
+    <Widget>
+      <Widget.Header>
+        {/* <BackLinkArrow href="/" /> */}
+        <h3>
+          {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
+        </h3>
+      </Widget.Header>
+
+      <img
+        alt="Descrição"
+        style={{
+          width: '100%',
+          height: '150px',
+          objectFit: 'cover',
+        }}
+        src={question.image}
+      />
+      <Widget.Content>
+        <h2>
+          {question.title}
+        </h2>
+        <p>
+          {question.description}
+        </p>
+
+        <form onSubmit={(infosDoEvento) => {
+          infosDoEvento.preventDefault();
+          onSubmit();
+        }} >
+          {question.alternatives.map( (alternative, alternativeIndex) => {
+            const alternativeId = `alternative_${alternativeIndex}`;
+            return (
+              <Widget.Topic
+                as="label"
+                htmlFor={alternativeId}
+              >
+                <input 
+                  // style={{ display:'none' }}
+                  id={alternativeId}
+                  name={questionId}
+                  type="radio"
+                />
+                {alternative}
+              </Widget.Topic>
+            );
+          })}
+
+          <Button type="submit">
+            Confirmar
+          </Button>
+        </form>
+
+
+
+      </Widget.Content>
+    </Widget>
+  );
+}
+
+const screenStates = {
+  LOADING: 'LOADING',
+  QUIZ: 'QUIZ',
+  RESULT: 'RESULT',
+}
+
 export default function QuizPage() {
-  console.log('Perguntas criadas: ', db.questions);
+  const [screenState, setScreenState] = React.useState(screenStates.LOADING);
+  const totalQuestions = db.questions.length;
+  const [currentQuestion, setCurrentQuestion] = React.useState(0);
+  const questionIndex = currentQuestion;
+  const question = db.questions[questionIndex];
+
+  React.useEffect( () => {
+    setTimeout( () => {
+      setScreenState(screenStates.QUIZ);
+    }, 1 * 1000);
+  // nasce === didMount
+  }, []);
+
+  function handleSubmitQuiz() {
+    const nextQuestion = questionIndex + 1;
+    if(nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
+    }
+  }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
-          <Widget.Header>
-            {/* <BackLinkArrow href="/" /> */}
-            <h3>
-              Pergunta
-              1
-              de 
-              {` ${db.questions.length}`}
-            </h3>
-          </Widget.Header>
 
-          <img
-            alt="Descrição"
-            style={{
-              width: '100%',
-              height: '150px',
-              objectFit: 'cover',
-            }}
-            src="https://placehold.it/400x400"
-          />
-          <Widget.Content>
-            <h2>
-              Título
-            </h2>
-            <p>
-              Descrição
-            </p>
+        {screenState === screenStates.LOADING && <LoadingWidget />}
+        
+        {screenState === screenStates.QUIZ && <QuestionWidget 
+          question={question} 
+          questionIndex={questionIndex}
+          totalQuestions={totalQuestions}
+          onSubmit={handleSubmitQuiz}
+        />}
 
-            <Button>
-              Confirmar
-            </Button>
-          </Widget.Content>
-
-
-        </Widget>
+        {screenState === screenStates.RESULT && <div>Você acertou X questões</div>}
       </QuizContainer>
     </QuizBackground>
   )
