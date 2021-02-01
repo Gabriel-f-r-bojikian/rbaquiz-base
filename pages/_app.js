@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
         <title>{db.title}</title>
         <meta property="og:title" content={db.title} />
         <meta property="og:site_name" content={db.title} />
-        <meta property="og:image" content={db.bg} key="image" />
+        <meta property="og:image:secure" content={db.bg} key="image" />
         <meta property="og:description" content="Teste seus conhecimentos sobre boxe" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
