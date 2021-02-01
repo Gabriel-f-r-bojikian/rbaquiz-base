@@ -11,19 +11,24 @@ const InputBase = styled.input`
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: 0;
-  margin-bottom:25px;
-`
+  margin-bottom: 25px;
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: ${({ theme }) => theme.colors.contrastText}DD;
+    opacity: 1; /* Firefox */
+  }
+`;
 
 export default function Input({ onChange, placeholder, ...props }) {
   return (
     <div>
-      <InputBase 
-        placeholder = {placeholder}
+      <InputBase
+        placeholder={placeholder}
         onChange={onChange}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />
     </div>
-  )
+  );
 }
 
 Input.defaultProps = {
@@ -34,5 +39,5 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-}
+  value: PropTypes.string,
+};
